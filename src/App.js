@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from './components/nav.jsx';
+import Body from './components/body.jsx';
+import React from 'react';
 
 function App() {
+  const [firstName, setFirstName] = React.useState("")
+    
+  function handleChange(event) {
+      console.log(event)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-slate-300 w-full h-screen">
+      {/* <Nav />
+      <Body /> */}
+      <form>
+        <input
+          type="text"
+          placeholder="First Name"
+          onChange={handleChange}
+        />
+      </form>
     </div>
   );
 }
